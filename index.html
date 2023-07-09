@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title> App by Advait </title>
+	<style>
+		* { font-size:40px; }
+		body { background-color:yellow; }
+	</style>
+	<script>
+	function getmsg()
+	{
+		
+		let ans = document.getElementById("ans");
+		let urladd = "https://api.quotable.io/random";
+		fetch(urladd)
+		.then(res => res.json())
+		.then(data => ans.innerHTML = data.author + " ==> " + data.content)
+		.catch(err => ans.innerHTML = "issue " + err );
+	}
+	</script>
+</head>
+<body>
+<center>
+	<h1> Motivational Message App </h1>
+	
+		<h1 id="ans"> </h1>
+<script>
+	function getmsg()
+	{
+		
+		let ans = document.getElementById("ans");
+		let urladd = "https://api.quotable.io/random";
+		fetch(urladd)
+		.then(res => res.json())
+		.then(data => ans.innerHTML = data.author + " ==> " + data.content)
+		.catch(err => ans.innerHTML = "issue " + err );
+
+	}
+	getmsg();
+	setInterval(getmsg,5000);
+
+	</script>
+</center>
+</body>
+</html>
